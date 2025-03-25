@@ -1,0 +1,45 @@
+name: Update AltStore Repo
+
+on:
+  schedule:
+    - cron: "0 0 * * *" # Check every day
+  workflow_dispatch:
+
+jobs:
+  update-repo:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Get latest release info
+        id: get_release
+        run: |
+          LATEST_RELEASE=$(curl -s https://api.github.com/repos/level3tjg/RedditFilter/releases/latest)
+          IPA_URL=$(echo "$LATEST_RELEASE" | jq -r '.assets[] | select(.name | contains(".ipa")) | .browser_download_url')
+          VERSION=$(echo "$LATEST_RELEASE" | jq -r '.tag_name')
+          SIZE=$(echo "$LATEST_RELEASE" | jq -r '.assets[] | select(.name | contains(".ipa")) | .size')
+
+          echo "ipa_url=$IPA_URL" >> $GITHUB_OUTPUT
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "size=$SIZE" >> $GITHUB_OUTPUT
+
+      - name: Update apps.json
+        env:
+          IPA_URL: ${{ steps.get_release.outputs.ipa_url }}
+          VERSION: ${{ steps.get_release.outputs.version }}
+          SIZE: ${{ steps.get_release.outputs.size }}
+        run: |
+          jq --arg url "$IPA_URL" --arg version "${VERSION#v}" --arg size "$SIZE" '
+            .apps[0].downloadURL = $url |
+            .apps[0].version = $version |
+            .apps[0].size = ($size | tonumber)
+          ' apps.json > apps.json.tmp
+          mv apps.json.tmp apps.json
+
+      - name: Commit and push changes
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add apps.json
+          git commit -m "Update apps.json for latest release"
+          git push

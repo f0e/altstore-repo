@@ -1,101 +1,37 @@
-name: Update RedditFilter
+name: Update Repo
 
 on:
   schedule:
-    - cron: "0 0 * * *" # Check every day
+    - cron: "0 0 * * *"
   workflow_dispatch:
 
 jobs:
-  update-reddit-filter:
+  update:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
-      - name: Get latest release info
-        id: get_release
+      - uses: astral-sh/setup-uv@v4
+
+      - name: Update apps
+        id: update
         run: |
-          LATEST_RELEASE=$(curl -s https://api.github.com/repos/level3tjg/RedditFilter/releases/latest)
-
-          # Safely extract IPA URL
-          IPA_URL=$(echo "$LATEST_RELEASE" | jq -r '.assets[] | select(.name | contains(".ipa")) | .browser_download_url // ""')
-
-          # Extract version
-          VERSION=$(echo "$LATEST_RELEASE" | jq -r '.tag_name // ""')
-
-          # Extract size, defaulting to 0 if not found
-          SIZE=$(echo "$LATEST_RELEASE" | jq -r '.assets[] | select(.name | contains(".ipa")) | (.size // 0)')
-
-          # Extract release date
-          RELEASE_DATE=$(echo "$LATEST_RELEASE" | jq -r '.published_at // ""')
-
-          # Extract description, escaping newlines
-          DESCRIPTION=$(echo "$LATEST_RELEASE" | jq -r '.body | @sh' | tr -d "'")
-
-          # Ensure no empty values
-          IPA_URL=${IPA_URL:-""}
-          VERSION=${VERSION:-""}
-          SIZE=${SIZE:-0}
-          RELEASE_DATE=${RELEASE_DATE:-""}
-
-          # Output to GitHub Actions
-          echo "ipa_url=${IPA_URL}" >> "$GITHUB_OUTPUT"
-          echo "version=${VERSION}" >> "$GITHUB_OUTPUT"
-          echo "size=${SIZE}" >> "$GITHUB_OUTPUT"
-          echo "release_date=${RELEASE_DATE}" >> "$GITHUB_OUTPUT"
-          echo "description<<EOF" >> "$GITHUB_OUTPUT"
-          echo "$DESCRIPTION" >> "$GITHUB_OUTPUT"
-          echo "EOF" >> "$GITHUB_OUTPUT"
-
-      - name: Check if update is needed
-        id: check_update
-        env:
-          VERSION: ${{ steps.get_release.outputs.version }}
-        run: |
-          CURRENT_VERSION=$(jq -r '.apps[0].version' apps.json)
-          NEW_VERSION="${VERSION#v}"
-
-          if [ "$CURRENT_VERSION" != "$NEW_VERSION" ]; then
-            echo "Update needed"
-            echo "update_required=true" >> $GITHUB_OUTPUT
+          if uv run update.py; then
+            echo "updated=true" >> "$GITHUB_OUTPUT"
           else
-            echo "No update required"
-            echo "update_required=false" >> $GITHUB_OUTPUT
+            echo "updated=false" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Update apps.json
-        if: steps.check_update.outputs.update_required == 'true'
-        env:
-          IPA_URL: ${{ steps.get_release.outputs.ipa_url }}
-          VERSION: ${{ steps.get_release.outputs.version }}
-          SIZE: ${{ steps.get_release.outputs.size }}
-          RELEASE_DATE: ${{ steps.get_release.outputs.release_date }}
-          DESCRIPTION: ${{ steps.get_release.outputs.description }}
+      - name: Commit changes
+        if: steps.update.outputs.updated == 'true'
         run: |
-          jq --arg url "$IPA_URL" \
-             --arg version "${VERSION#v}" \
-             --arg size "$SIZE" \
-             --arg release_date "$RELEASE_DATE" \
-             --arg description "$DESCRIPTION" '
-            .apps[0].downloadURL = $url |
-            .apps[0].version = $version |
-            .apps[0].size = ($size | tonumber) |
-            .apps[0].versionDate = $release_date |
-            .apps[0].versionDescription = $description
-          ' apps.json > apps.json.tmp
-          mv apps.json.tmp apps.json
-
-      - name: Commit and push changes
-        if: steps.check_update.outputs.update_required == 'true'
-        env:
-          VERSION: ${{ steps.get_release.outputs.version }}
-        run: |
-          git config user.name github-actions
-          git config user.email github-actions@github.com
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
           git add apps.json
-          git commit -m "update: RedditFilter ${VERSION#v}"
+          git commit -m "chore: update apps"
           git push
 
-  workflow-keepalive: # https://github.com/liskin/gh-workflow-keepalive
+  keepalive: # https://github.com/liskin/gh-workflow-keepalive
     if: github.event_name == 'schedule'
     runs-on: ubuntu-latest
     permissions:

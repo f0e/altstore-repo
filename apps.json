@@ -4,7 +4,7 @@
       "beta": false,
       "bundleIdentifier": "com.reddit.Reddit",
       "developerName": "level3tjg",
-      "downloadURL": "https://github.com/level3tjg/RedditFilter/releases/download/v2025.07.1-1.1.7/RedditFilter_2025.07.1-1.1.7.ipa",
+      "downloadURL": "https://github.com/level3tjg/RedditFilter/releases/download/v2025.37.0-1.1.8/RedditFilter_2025.37.0-1.1.8.ipa",
       "iconURL": "https://raw.githubusercontent.com/qnblackcat/AltStore/main/ScreenShot/free-reddit-logo-icon-2436-thumb.png",
       "localizedDescription": "- RedditFilter & RedditSideloadFix are made by u/level3tjg!!!\n- Filter out unwanted content from your Reddit feed. Configurable from in-app settings.\n- Requires iOS 14.0 or later.\n- Source code: \nhttps://github.com/level3tjg/RedditFilter\nhttps://github.com/level3tjg/RedditSideloadFix",
       "name": "RedditFilter",
@@ -12,12 +12,12 @@
         "https://level3tjg.me/repo/depictions/com.level3tjg.redditfilter/screenshots/1.PNG",
         "https://level3tjg.me/repo/depictions/com.level3tjg.redditfilter/screenshots/2.PNG"
       ],
-      "size": 139065345,
+      "size": 137114565,
       "subtitle": "Filter out unwanted content from your Reddit feed. Configurable from in-app settings",
       "tintColor": "ff4600",
-      "version": "2025.07.1-1.1.7",
-      "versionDate": "2025-02-27T14:16:51Z",
-      "versionDescription": "# RedditFilter v2025.07.1-1.1.7\r\n\r\n## Changes\r\n\r\n- Fixed feed filter settings not appearing in app settings\r\n- Fixed missing feed filter settings icon\r\n- Fixed some recommendations still showing up in the home feed"
+      "version": "2025.37.0-1.1.8",
+      "versionDate": "2025-09-26T09:29:45Z",
+      "versionDescription": "# RedditFilter v2025.37.0-1.1.8\r\n\r\n## Changes\r\n\r\n- Fix app crash (@NicholasBly)\r\n- Fix ad comments showing under posts (@Laitinlok)\r\n- Fix popular feed not showing with recommendations disabled\r\n- Move RedditFilter settings to the user drawer / side bar (accessed by tapping the profile picture in the top right)\r\n\r\n## SHA256\r\n\r\n- `1e33615cc37168e84256fd6c487a77cf8b11fe187532daf7331b707b664c07e3`  packages/RedditFilter_2025.37.0-1.1.8.ipa\r\n- `1aabd2f0656e6ec4b26fa38f4b5e10bb2d4465c0c6e087e3d57da57a06799f83`  packages/com.level3tjg.redditfilter_1.1.8_iphoneos-arm.deb\r\n- `e871f455aa868a25a7ea1fd40ef3b19a7a7ade21aa4162e0b26d94dab9f31c12`  packages/com.level3tjg.redditfilter_1.1.8_iphoneos-arm64.deb"
     }
   ],
   "identifier": "com.f0e.altstorerepo",

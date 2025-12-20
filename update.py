@@ -100,7 +100,7 @@ def update_app(data: dict, config: AppConfig, release: Release) -> tuple[dict, b
 def main():
     apps = [
         AppConfig("RedditFilter", "level3tjg/RedditFilter", ".ipa"),
-        AppConfig("BTLoader", "CloudySn0w/BTLoader", "discord.ipa"),
+        AppConfig("BTLoader (Kettu Discord mod)", "CloudySn0w/BTLoader", "discord.ipa"),
     ]
 
     data = load_apps_json()

@@ -43,11 +43,11 @@
       "iconURL": "https://i.imgur.com/C1YumfI.png",
       "tintColor": "#6156e2",
       "category": "social",
-      "downloadURL": "https://github.com/CloudySn0w/BTLoader/releases/download/v305.0/discord.ipa",
-      "version": "305.0",
-      "size": 99209093,
-      "versionDate": "2025-11-17T22:58:47Z",
-      "versionDescription": "\u2705 | Download the latest stable build here.\r\n\r\n## Downloads\r\n\r\n- **bound.ipa**: BTLoader with Bound name and icon\r\n- **discord.ipa**: BTLoader with original Discord name and icon\r\n- **DEB**: Rootless package for jailbroken devices\r\n\r\n## Versions\r\n\r\n- Discord: v305.0\r\n- BTLoader: v1.0.1\r\n\r\n## Features\r\n\r\n- TrollStore compatibility  \r\n- Optimized for size and performance\r\n"
+      "downloadURL": "https://github.com/CloudySn0w/BTLoader/releases/download/v305.1/discord.ipa",
+      "version": "305.1",
+      "size": 99210478,
+      "versionDate": "2026-01-02T13:47:54Z",
+      "versionDescription": "\ud83c\udf89 | Download the latest stable build here.\r\n\r\n**_PS: For those who read these... which I doubt is many. We are staying on versions lower than 306. This is because 306 and onward has broken plugin settings pages. Which sadly only can be fixed by plugin devs stepping in, which they evidently have not. I can still do newer versions. But the vast majority never reads these messages and will assume the worst if it doesn't work out of the box. Sorry my fellow testers._**\r\n\r\n## Downloads\r\n\r\n- **bound.ipa**: BTLoader with Bound name and icon\r\n- **discord.ipa**: BTLoader with original Discord name and icon\r\n- **DEB**: Rootless package for jailbroken devices\r\n\r\n## Versions\r\n\r\n- Discord: v305.1\r\n- BTLoader: v1.0.2\r\n\r\n## Features\r\n\r\n- TrollStore compatibility  \r\n- Optimized for size and performance\r\n"
     }
   ]
 }

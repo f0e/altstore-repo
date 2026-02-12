@@ -43,11 +43,11 @@
       "iconURL": "https://i.imgur.com/C1YumfI.png",
       "tintColor": "#6156e2",
       "category": "social",
-      "downloadURL": "https://github.com/CloudySn0w/BTLoader/releases/download/v313.0/discord.ipa",
-      "version": "313.0",
-      "size": 95679545,
-      "versionDate": "2026-01-28T15:34:11Z",
-      "versionDescription": "\u26a0\ufe0f | Download the latest testing build here.\r\n\r\n**_PS: I'm telling yall now again. This release WILL have the plugin page issue for older plugins. I thought some of ya wanted a never version so I made it._** \u203c\ufe0f\u203c\ufe0f\r\n\r\n## Downloads\r\n\r\n- **bound.ipa**: BTLoader with Bound name and icon\r\n- **discord.ipa**: BTLoader with original Discord name and icon\r\n- **DEB**: Rootless package for jailbroken devices\r\n\r\n## Versions\r\n\r\n- Discord: v313.0\r\n- BTLoader: v1.0.2\r\n\r\n## Features\r\n\r\n- TrollStore compatibility  \r\n- Optimized for size and performance\r\n"
+      "downloadURL": "https://github.com/CloudySn0w/BTLoader/releases/download/v315.0/discord.ipa",
+      "version": "315.0",
+      "size": 95108390,
+      "versionDate": "2026-02-11T17:57:17Z",
+      "versionDescription": "\u26a0\ufe0f | Download the latest testing build here.\r\n\r\n\u26a0\ufe0f **_PS: Just reminding everyone again. This testing release still has the known issue with plugin settings pages on some plugins. I know some of you have been asking for a newer version anyway. So I put together this testing build for you once again._** \u26a0\ufe0f\r\n\r\n## Downloads\r\n\r\n- **bound.ipa**: BTLoader with Bound name and icon\r\n- **discord.ipa**: BTLoader with original Discord name and icon\r\n- **DEB**: Rootless package for jailbroken devices\r\n\r\n## Versions\r\n\r\n- Discord: v315.0\r\n- BTLoader: v1.0.2\r\n\r\n## Features\r\n\r\n- TrollStore compatibility  \r\n- Optimized for size and performance\r\n"
     }
   ]
 }

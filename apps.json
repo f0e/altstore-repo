@@ -43,11 +43,11 @@
       "iconURL": "https://i.imgur.com/C1YumfI.png",
       "tintColor": "#6156e2",
       "category": "social",
-      "downloadURL": "https://github.com/CloudySn0w/BTLoader/releases/download/v315.0/discord.ipa",
-      "version": "315.0",
-      "size": 95108390,
-      "versionDate": "2026-02-11T17:57:17Z",
-      "versionDescription": "\u26a0\ufe0f | Download the latest testing build here.\r\n\r\n\u26a0\ufe0f **_PS: Just reminding everyone again. This testing release still has the known issue with plugin settings pages on some plugins. I know some of you have been asking for a newer version anyway. So I put together this testing build for you once again._** \u26a0\ufe0f\r\n\r\n## Downloads\r\n\r\n- **bound.ipa**: BTLoader with Bound name and icon\r\n- **discord.ipa**: BTLoader with original Discord name and icon\r\n- **DEB**: Rootless package for jailbroken devices\r\n\r\n## Versions\r\n\r\n- Discord: v315.0\r\n- BTLoader: v1.0.2\r\n\r\n## Features\r\n\r\n- TrollStore compatibility  \r\n- Optimized for size and performance\r\n"
+      "downloadURL": "https://github.com/CloudySn0w/BTLoader/releases/download/v317.0/discord.ipa",
+      "version": "317.0",
+      "size": 91199082,
+      "versionDate": "2026-02-25T21:46:52Z",
+      "versionDescription": "\u26a0\ufe0f | Download the latest testing build here.\r\n\r\n\u26a0\ufe0f **_PS: Just reminding everyone again. This testing release still has the known issue with plugin settings pages on some plugins. I know some of you have been asking for a newer version anyway. So I put together this testing build for you. Also watch out for that weather, I\u2019ve heard Rain is forecasted in the coming months._** \u26a0\ufe0f\r\n\r\n## Downloads\r\n\r\n- **bound.ipa**: BTLoader with Bound name and icon\r\n- **discord.ipa**: BTLoader with original Discord name and icon\r\n- **DEB**: Rootless package for jailbroken devices\r\n\r\n## Versions\r\n\r\n- Discord: v317.0\r\n- BTLoader: v1.0.2\r\n\r\n## Features\r\n\r\n- TrollStore compatibility  \r\n- Optimized for size and performance\r\n"
     }
   ]
 }
